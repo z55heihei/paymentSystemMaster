@@ -13,27 +13,50 @@
 		    align-items: center;
 		    justify-content: center;
 		    
-		    margin: 0;
+		   
 		    
 		}
-		
-		.order-info {
-		    width: 100%;
-		    max-width: 400px;
-		    text-align: center;
-		    
-		    padding: 20px;
-		   
-		    margin-bottom: 20px;
+	
+		.order-info h2,.detail,.riangle-container {
+		    display: inline-block; /* 使这些元素在一行内显示 */
+		    /* margin-bottom: 20px; 可以移除或根据需要调整 */
+			font-size: 15px;
+		}
+		.order-info .detail{
+			position: relative;
+			left: 210px;
+			
+		}
+		.order-info h2{
+           position: absolute;
+		   margin:0 auto;
+		}
+		.order-info{
+			background-color: lightgray;
+			width: 500px;
+			height: 30px;
+			margin: 0 auto;
+			display: flex; /* 启用Flexbox布局 */
+			justify-content: center; /* 水平居中 */
+			align-items: center; /* 垂直居中 */
+			flex-direction: row; /* 子元素排列为一行 */
 		}
 		#amount1{
-			font-size: 40px;
+			font-size: 50px;
+			text-align: center;
+			margin-top: 50px;
+			
 		}
-		
+			
+		.time{
+			color:lightgray;
+			margin: 1 auto;
+		}
 		
 		
 		.payment-container {
 		    text-align: center;
+			margin-top: -300px;
 		}
 		
 		.payment-button {
@@ -65,7 +88,7 @@
 		}
 		
 		.confirm-button {
-		    width: 200px;
+		    width: 120px;
 		    height: 50px;
 		    font-size: 17px;
 		    color: white;
@@ -77,20 +100,51 @@
 		    transition: background-color 0.3s;
 		}
 		
-		.confirm-button:hover {
-		    background-color: #e53935;
+		
+			  /* 添加三角形容器的样式 */
+		.triangle-container {
+			position: relative;
+			top: 1px;
+			left:-270px;
+			
+			}
+			
+			        /* 使用伪元素创建三角形 */
+		.triangle-container::before {
+			content: "";
+			position: absolute;
+			
+			border-top: 20px solid red; /* 三角形的顶部颜色 */
+            border-right: 20px solid transparent; /* 右边透明 */
+		    border-left: 20px solid red; /* 左边透明 */
+			width: 10px;
+			height: 10px;
+			border-style: solid;
+			border-width: 2px 0px 0px 2px; /* 调整这些值来改变三角形的大小和方向 */
+			border-color: black transparent transparent black; 
+			transform: rotate(-45deg); /* 旋转45度 */
+			transform-origin: left top; /* 设置旋转的基点为左上角 */
 		}
-	</style>
+		.order-details,.payment-container{
+			background-color: aliceblue;
+			width: 500px;
+			height: 500px;
+		}
+			
+		</style>
 </head>
 <body>
     <div class="order-info">
-        <h2>订单</h2>
-        <div class="order-details">
-            <p>订单详情</p>
-            <p>交易剩余时间: <span id="remainingTime">14:57</span></p>
+		
+        <h2>订单</h2><p class="detail">订单详情</p>
+		<div class="triangle-container"></div><!-- 三角形容器 -->
+		</div>
+        <div class="order-details" style="text-align: center;">
+            
+            <p class="time">交易剩余时间: <span id="remainingTime">14:57</span></p>
             <p id="amount1"><strong>¥</strong><span id="amount"><strong>31.40</strong></span></p>
         </div>
-    </div>
+    
     <div class="payment-container">
         <div class="payment-options">
             <button class="payment-button wechat">微信支付</button>

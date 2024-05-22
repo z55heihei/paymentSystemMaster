@@ -10,6 +10,19 @@
             padding: 0px 100px 0px 100px;
             background: #f4f4f4;
         }
+		a {
+		    text-decoration: none; /* 去除下划线 */
+		    color: inherit; /* 保持与周围文本相同的颜色 */
+		    background-color: transparent; /* 确保背景色为透明 */
+		    padding: 0; /* 去除内边距 */
+		    margin: 0; /* 去除外边距 */
+		}
+		.exit-button{
+			display: inline-block;
+			cursor: pointer;
+			position:relative;
+			right:3px;
+		}
 		.school{
 			width:50px;
 			height: 50px;
@@ -17,24 +30,59 @@
 			top: 10px; /* 向下移动图片 */
 		}
         .container {
-            width: 80%;
-            margin: auto;
+            margin: 0 auto;
             background: white;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 		.welcome{
-			background-color: #FFFEFD;
-			border:3px solid #86B2D4;
+			background-color: #CBDAEF;
+			border:1px solid #86B2D4;
 			font-family: 宋体;
-			margin-top: 0; 
+			margin: 0; 
 			padding-top: 0;
 		}
+		.button-select{
+			width: 20px;
+			height:20px;
+		}
+		/* 隐藏select元素的默认样式 */
+		select {
+		    -webkit-appearance: none; /* 隐藏Chrome和Safari的默认样式 */
+		    -moz-appearance: none; /* 隐藏Firefox的默认样式 */
+		    appearance: none;
+		    background-color: transparent; /* 透明背景 */
+		    border: none; /* 无边框 */
+		}
+		
+		/* 自定义下拉三角的样式 */
+		.select::after {
+		    content: '▼'; /* 下拉箭头字符 */
+		    position: absolute;
+		    top: 50%;
+		    right: 10px; /* 根据需要调整位置 */
+		    transform: translateY(-50%);
+		    font-size: 14px; /* 字体大小 */
+		    pointer-events: none; /* 防止点击触发其他事件 */
+		}
+		
+		/* 鼠标悬停时的样式 */
+		.button-select:hover::after {
+		    color: #007bff; /* 鼠标悬停时的颜色 */
+		}
+	
+		
+		
+		.list{
+			background-color: #CBDAEF;
+			margin:0 auto;
+		}
+		
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 0px;
         }
         th, td {
             border: 1px solid #ddd;
@@ -51,6 +99,9 @@
             text-align: center;
             margin-bottom: 20px;
 			margin-bottom: 0; 
+			display: flex;           /* 启用Flexbox布局 */
+			justify-content: space-between; /* 两端对齐，使退出按钮位于行尾 */
+			align-items: center;      /* 垂直居中对齐 */
         }
         .header h1 {
             margin: 0 auto;
@@ -68,41 +119,104 @@
 <body>
     <div class="header">
         <h1><img src="校徽.png" class="school">江苏财经职业技术学院缴费平台</h1>
+		<button class="exit-button">退出</button>
     </div>
+	
 	<p class="welcome">欢迎闭雅琳（2201380901）</p>
     <div class="container">
         
-        <p>费用支付 | 缴费历史查询 | 修改个人信息 | 修改密码</p >
-        <p>收费单位：<input style="text"></p>
-		 <p>收费项目：<input style="text"></p>
-		 <p>费用项目列表</p>
+        <button><a href="缴费.html">费用支付</a></button>
+        <button><a href="history.html">缴费历史查询</a></button>
+        <button><a href="edit_profile.html">修改个人信息</a></button>
+        <button><a href="change_password.html">修改密码</a></button>
+        <p>收费单位：
+		<input style="text">
+		 <button class="button-select">
+		        <select>
+		            <!-- 下拉菜单选项 -->
+		        </select>
+		    </button>
+		</p>
+		 <p>收费项目：<input style="text">
+		  <button class="button-select">
+		         <select>
+		             <!-- 下拉菜单选项 -->
+		         </select>
+		     </button>
+		 </p>
+		 <p class="list">费用项目列表</p>
         <table>
-            <tr>
-               
-                <th>费用名称</th>
-                <th>收费项目</th>
-                <th>单价</th>
-                <th>数量</th>
-                <th>应收金额</th>
-                <th>已付金额</th>
-                <th>退费金额</th>
-                <th>未付金额</th>
-                <th>单次支付最大金额</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>学费（必缴）</td>
-                <td>2023学费-2023</td>
-                <td>0.00</td>
-                <td>0</td>
-                <td>4700.00</td>
-                <td>0.00</td>
-                <td>0.00</td>
-                <td>4700.00</td>
-            </tr>
-            <!-- 其他费用项按照上面的格式添加 -->
-        </table>
-    </div>
+                <tr>
+                    <th>费用名称</th>
+                    <th>收费项目</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>应收金额</th>
+                    <th>已付金额</th>
+                    <th>退费金额</th>
+                    <th>未付金额</th>
+                    <th>单次支付最大金额</th>
+                </tr>
+                <!-- 添加表格数据 -->
+                <tr>
+                    <td>学费（必缴）</td>
+                    <td>2024学费-2</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>7500.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>7500.00</td>
+					<td>0.00</td>
+                </tr>
+                <tr>
+                    <td>住宿费</td>
+                    <td>2024住宿费-2</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1200.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>1200.00</td>
+					<td>0.00</td>
+                </tr>
+                <tr>
+                    <td>代办费</td>
+                    <td>2024代办费-2</td>
+                    <td>0</td>
+                    <td>350.00</td>
+                    <td>0.00</td>
+                    <td>350.01</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+					<td>0.00</td>
+                </tr>
+                <tr>
+                    <td>专业学费</td>
+                    <td>2024专业学费-2</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2800.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>2800.00</td>
+					<td>0.00</td>
+                </tr>
+                <tr>
+                    <td>电子图像采集费</td>
+                    <td>2024电子图像采集费</td>
+                    <td>75.00</td>
+                    <td>0</td>
+                    <td>75.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>75.00</td>
+					<td>0.00</td>
+					
+                </tr>
+                
+            </table>
+        </div>
     <div class="footer">
         <p>版权所有 © 2023 江委财理科业技术学院</p >
     </div>
