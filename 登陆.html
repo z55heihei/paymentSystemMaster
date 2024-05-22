@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>江苏财经职业技术学院缴费系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            background: white;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center; /* 添加此行以居中图片 */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-button {
+            width: 220px;
+            padding: 10px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-button:hover {
+            background-color: #00aaff;
+        }
+        .logo {
+            width: 180px; 
+            max-width: 300px; 
+            height: auto; 
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+            <img src="登录.jpg" alt="江苏财经职业技术学院缴费系统" class="logo">
+            <form action="/submit-your-login-form" method="post" onsubmit="return handleLogin()">
+                <!-- 其他表单元素保持不变 -->
+                <div class="form-group">
+                    <input type="text" id="username" name="username" required placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required placeholder="密码">
+                </div>
+                <button type="submit" class="login-button">登录</button>
+            </form>
+        </div>
+    
+        <script>
+            // 登录处理函数
+            function handleLogin() {
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                
+                // 在这里添加你的验证逻辑
+                // 例如，假设正确的用户名是"admin"，密码是"123456"
+                if (username === '452623200212180024' && password === 'Cngelababy1') {
+                    // 登录成功，跳转到另一个页面
+                    window.location.href = '缴费.html'; // 登录成功后跳转的页面
+                    return true; // 允许表单提交
+                } else {
+                    // 登录失败，阻止表单提交，并提示错误信息
+                    alert('用户名或密码错误！');
+                    return false; // 阻止表单提交
+                }
+            }
+        </script>
+    </body>
+    </html>

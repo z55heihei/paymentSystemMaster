@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付页面</title>
+    <link rel="stylesheet" href="payment.css">
+	<style>
+		body {
+		    font-family: Arial, sans-serif;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
+		    
+		    margin: 0;
+		    
+		}
+		
+		.order-info {
+		    width: 100%;
+		    max-width: 400px;
+		    text-align: center;
+		    
+		    padding: 20px;
+		   
+		    margin-bottom: 20px;
+		}
+		#amount1{
+			font-size: 40px;
+		}
+		
+		
+		
+		.payment-container {
+		    text-align: center;
+		}
+		
+		.payment-button {
+		    width: 120px;
+		    height: 50px;
+		    font-size: 18px;
+		    color: white;
+		    border: none;
+		    border-radius: 5px;
+		    margin: 10px;
+		    cursor: pointer;
+		    transition: background-color 0.3s;
+		}
+		
+		.wechat {
+		    background-color: #4caf50;
+		}
+		
+		.wechat:hover {
+		    background-color: #45a049;
+		}
+		
+		.alipay {
+		    background-color: #1e90ff;
+		}
+		
+		.alipay:hover {
+		    background-color: #187bcd;
+		}
+		
+		.confirm-button {
+		    width: 200px;
+		    height: 50px;
+		    font-size: 17px;
+		    color: white;
+		    background-color: #f44336;
+		    border: none;
+		    border-radius: 5px;
+		    margin-top: 130px;
+		    cursor: pointer;
+		    transition: background-color 0.3s;
+		}
+		
+		.confirm-button:hover {
+		    background-color: #e53935;
+		}
+	</style>
+</head>
+<body>
+    <div class="order-info">
+        <h2>订单</h2>
+        <div class="order-details">
+            <p>订单详情</p>
+            <p>交易剩余时间: <span id="remainingTime">14:57</span></p>
+            <p id="amount1"><strong>¥</strong><span id="amount"><strong>31.40</strong></span></p>
+        </div>
+    </div>
+    <div class="payment-container">
+        <div class="payment-options">
+            <button class="payment-button wechat">微信支付</button>
+            <button class="payment-button alipay">支付宝支付</button>
+        </div>
+        <button class="confirm-button">确认交易</button>
+    </div>
+</body>
+</html>

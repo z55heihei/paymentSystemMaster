@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>江苏财经职业技术学院缴费平台</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px 100px 0px 100px;
+            background: #f4f4f4;
+        }
+		.school{
+			width:50px;
+			height: 50px;
+			position: relative; /* 相对于其正常位置定位 */
+			top: 10px; /* 向下移动图片 */
+		}
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+		.welcome{
+			background-color: #FFFEFD;
+			border:3px solid #86B2D4;
+			font-family: 宋体;
+			margin-top: 0; 
+			padding-top: 0;
+		}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+			margin-bottom: 0; 
+        }
+        .header h1 {
+            margin: 0 auto;
+			font-family: 楷体;
+			margin-bottom: 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><img src="校徽.png" class="school">江苏财经职业技术学院缴费平台</h1>
+    </div>
+	<p class="welcome">欢迎闭雅琳（2201380901）</p>
+    <div class="container">
+        
+        <p>费用支付 | 缴费历史查询 | 修改个人信息 | 修改密码</p >
+        <p>收费单位：<input style="text"></p>
+		 <p>收费项目：<input style="text"></p>
+		 <p>费用项目列表</p>
+        <table>
+            <tr>
+               
+                <th>费用名称</th>
+                <th>收费项目</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>应收金额</th>
+                <th>已付金额</th>
+                <th>退费金额</th>
+                <th>未付金额</th>
+                <th>单次支付最大金额</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>学费（必缴）</td>
+                <td>2023学费-2023</td>
+                <td>0.00</td>
+                <td>0</td>
+                <td>4700.00</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>4700.00</td>
+            </tr>
+            <!-- 其他费用项按照上面的格式添加 -->
+        </table>
+    </div>
+    <div class="footer">
+        <p>版权所有 © 2023 江委财理科业技术学院</p >
+    </div>
+</body>
+</html>
